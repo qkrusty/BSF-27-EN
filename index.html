@@ -54,6 +54,7 @@
     <symbol id="d-glasses" viewBox="0 0 130 56"><path d="M8 16h114" stroke="#101014" stroke-width="5" stroke-linecap="round"/><path d="M10 16h46v12q0 22-23 22T10 28Z" fill="#FF2884" stroke="#101014" stroke-width="4" stroke-linejoin="round"/><path d="M74 16h46v12q0 22-23 22T74 28Z" fill="#3FA9F5" stroke="#101014" stroke-width="4" stroke-linejoin="round"/><path d="M20 24l10 10M84 24l10 10" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/><path d="M56 22q9-6 18 0" fill="none" stroke="#101014" stroke-width="4"/></symbol>
     <symbol id="d-cassette" viewBox="0 0 120 78"><rect x="3" y="3" width="114" height="72" rx="8" fill="#FFDA30" stroke="#101014" stroke-width="4"/><rect x="14" y="12" width="92" height="20" rx="3" fill="#1CFFB6" stroke="#101014" stroke-width="3"/><rect x="26" y="38" width="68" height="24" rx="11" fill="#101014"/><circle cx="42" cy="50" r="7" fill="#FFF8E2"/><circle cx="78" cy="50" r="7" fill="#FFF8E2"/><path d="M30 75l6-9h48l6 9" fill="none" stroke="#101014" stroke-width="3"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="currentColor" stroke="#101014" stroke-width="1.6"/><path d="m3.5 6.5 8.5 7 8.5-7" fill="none" stroke="#101014" stroke-width="1.8" stroke-linejoin="round"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" stroke="#101014" stroke-width="1.5" d="M12 22s7-6.6 7-12a7 7 0 0 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6" fill="#fff" stroke="#101014" stroke-width="1.2"/></symbol>
     <!-- feature icons -->
     <symbol id="f-swim" viewBox="0 0 48 48"><circle cx="24" cy="20" r="13" fill="#FF3E5C" stroke="#101014" stroke-width="3"/><circle cx="24" cy="20" r="6" fill="#3FA9F5" stroke="#101014" stroke-width="3"/><path d="M13 12l5 5m12 0 5-5m-22 16 5-5m12 0 5 5" stroke="#FFF8E2" stroke-width="3.5"/><path d="M3 38c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3" fill="none" stroke="#101014" stroke-width="3" stroke-linecap="round"/></symbol>
@@ -87,7 +88,7 @@
       <a href="#line-up" style="--c:var(--pink)">Line-up</a>
       <a href="#tickets" style="--c:var(--mint)">Tickets</a>
       <a href="#zelena-voda" style="--c:var(--mint)">Zelená Voda</a>
-      <a href="#retro" style="--c:var(--blue)">Retro zone</a>
+      <a href="map.html" style="--c:var(--blue)">Map</a>
       <a href="#news" style="--c:var(--yellow)">News</a>
       <a href="faq.html" style="--c:var(--blue)">Info &amp; FAQ</a>
       <a href="partners.html" style="--c:var(--pink)">Partners</a>
@@ -542,10 +543,11 @@
     <div class="zv__grid">
       <div class="mapcard reveal">
         <div class="mapcard__head"><h3>Festival map 2027</h3><span class="tag">preliminary version</span></div>
-        <button class="map-open" type="button" data-full="assets/img/mapa-2027-full.webp" data-zoom="1" data-alt="BIG SUMMER FEST 2027 festival map (preliminary site layout)">
+        <a class="map-open" href="map.html">
           <img class="map-img" src="assets/img/mapa-2027.webp" width="1200" height="767" alt="BIG SUMMER FEST 2027 festival map – car parks, VIP parking, main and VIP entrance, stage, PREMIUM and standing area, VIP grandstand, VIP lounge SKY, food zone, caravan camping, camp village, beach and shuttle bus" loading="lazy" decoding="async">
-          <span class="map-open__hint"><svg class="ico"><use href="#i-zoom"/></svg>Enlarge map</span>
-        </button>
+          <span class="map-open__hint"><svg class="ico"><use href="#i-pin"/></svg>Interactive map</span>
+        </a>
+        <a class="btn btn--pink mapcard__btn" href="map.html"><svg class="ico mapcard__pin"><use href="#i-pin"/></svg><span>Full map with legend</span><svg class="ico"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="zv__side">
         <div class="newsbox reveal">
@@ -980,6 +982,30 @@
   </div>
 </section>
 
+<!-- ============ KONTAKT ============ -->
+<section class="section contactsec" id="contact" aria-labelledby="contact-title">
+  <svg class="deco a-spin" style="--s:38px;top:12%;right:6%;color:var(--pink)" aria-hidden="true"><use href="#i-star"/></svg>
+  <svg class="deco a-drift" style="--s:92px;bottom:10%;left:4%" aria-hidden="true"><use href="#d-cloud"/></svg>
+  <div class="wrap contactsec__grid">
+    <div class="contactsec__main">
+      <p class="hand hand--pink">we're here for you</p>
+      <h2 class="sec-title" id="contact-title"><span class="hl" style="--c:var(--pink)">Contact</span></h2>
+      <p class="sec-lead">Got a question about tickets, the programme or your stay at Zelená Voda? Write to us – we're happy to help.</p>
+      <a class="contactsec__mail" href="mailto:info@bigsummerfest.sk"><span class="contactsec__ico" aria-hidden="true"><svg><use href="#i-mail"/></svg></span><span class="contactsec__addr"><small>email us at</small><b>info@bigsummerfest.sk</b></span></a>
+      <div class="contactsec__row">
+        <button class="contactsec__copy" type="button" data-copy="info@bigsummerfest.sk"><span>Copy e-mail</span></button>
+        <p class="contactsec__org">Organiser: <strong>BSF Agency, s.r.o.</strong></p>
+      </div>
+    </div>
+    <ul class="contactsec__cards">
+      <li><a class="ccard" href="https://www.superticket.sk/big-summer-fest-2027" target="_blank" rel="noopener" style="--c:var(--yellow)"><svg class="ccard__ico" aria-hidden="true"><use href="#i-ticket"/></svg><b>Tickets</b><span>superticket.sk</span></a></li>
+      <li><a class="ccard" href="https://beachbarrezort.sk/" target="_blank" rel="noopener" style="--c:var(--mint)"><svg class="ccard__ico" aria-hidden="true"><use href="#f-tent"/></svg><b>Accommodation & camping</b><span>beachbarrezort.sk</span></a></li>
+      <li><a class="ccard" href="partners.html" style="--c:var(--pink)"><svg class="ccard__ico" aria-hidden="true"><use href="#i-star"/></svg><b>Partnerships & media</b><span>partnership offer</span></a></li>
+      <li><a class="ccard" href="faq.html" style="--c:var(--blue)"><svg class="ccard__ico" aria-hidden="true"><use href="#i-spark"/></svg><b>Info &amp; FAQ</b><span>answers to common questions</span></a></li>
+    </ul>
+  </div>
+</section>
+
 </main>
 
 <!-- ============ FOOTER ============ -->
@@ -1008,8 +1034,10 @@
         <li><a href="#line-up">Line-up</a></li>
         <li><a href="#tickets">Tickets</a></li>
         <li><a href="#zelena-voda">Zelená Voda resort</a></li>
+        <li><a href="map.html">Interactive map</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="faq.html">Info &amp; FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href="partners.html">Partners</a></li>
         <li><a href="https://bigsummer.sk/" hreflang="sk" lang="sk">Slovenská verzia (SK)</a></li>
       </ul>
@@ -1025,6 +1053,7 @@
     </div>
     <div class="footer__col">
       <h3>Contact</h3>
+      <p class="footer__mail"><a href="mailto:info@bigsummerfest.sk"><svg class="ico"><use href="#i-mail"/></svg>info@bigsummerfest.sk</a></p>
       <p>Organiser:<br><strong>BSF Agency, s.r.o.</strong></p>
       <p>Tickets: <a href="https://www.superticket.sk/big-summer-fest-2027" target="_blank" rel="noopener">superticket.sk</a><br>Accommodation: <a href="https://beachbarrezort.sk/" target="_blank" rel="noopener">beachbarrezort.sk</a></p>
       <ul class="footer__legal">

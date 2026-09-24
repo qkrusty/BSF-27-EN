@@ -11,12 +11,12 @@
   var L = EN ? {
     live: 'The festival is on right now – see you by the water!', menuOpen: 'Open menu', menuClose: 'Close menu',
     yt: 'Watch on YouTube', photo: 'Festival photo', zoom: 'click the map – zoom in / out', src: 'source: ',
-    buy: 'Buy a ticket', more: 'More names on FB', sep: ',', hash: 'article',
+    buy: 'Buy a ticket', more: 'More names on FB', sep: ',', hash: 'article', copied: 'Copied!',
     phrases: ['See you by the water!', '29–31 July 2027!', '3 days of summer!', 'One big party!', '90s hits!', "Who's coming with you?", 'Beach, sand & palm trees!']
   } : {
     live: 'Festival práve prebieha – vidíme sa pri vode!', menuOpen: 'Otvoriť menu', menuClose: 'Zavrieť menu',
     yt: 'Pozrieť na YouTube', photo: 'Fotografia z festivalu', zoom: 'kliknite do mapy – priblížiť / oddialiť', src: 'zdroj: ',
-    buy: 'Kúpiť vstupenku', more: 'Ďalšie mená na FB', sep: '\u00a0', hash: 'clanok',
+    buy: 'Kúpiť vstupenku', more: 'Ďalšie mená na FB', sep: '\u00a0', hash: 'clanok', copied: 'Skopírované!',
     phrases: ['Vidíme sa pri vode!', '29. – 31. 7. 2027!', '3 dni leta!', 'Veľká párty!', 'Hity 90. rokov!', 'Kto príde s vami?', 'Pláž, piesok a palmy!']
   };
 
@@ -303,6 +303,17 @@
       new IntersectionObserver(function (en) { fab.classList.toggle('is-away', en[0].isIntersecting); }, { rootMargin: '0px 0px -30% 0px' }).observe(heroEl);
     } else fab.classList.remove('is-away');
   }
+
+  /* ---------- 9g. Kopírovanie e-mailu ---------- */
+  $$('[data-copy]').forEach(function (b) {
+    var lbl = $('span', b) || b, orig = lbl.textContent, t;
+    b.addEventListener('click', function () {
+      var txt = b.getAttribute('data-copy');
+      var done = function () { lbl.textContent = L.copied; b.classList.add('is-done'); clearTimeout(t); t = setTimeout(function () { lbl.textContent = orig; b.classList.remove('is-done'); }, 1800); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, function () { location.href = 'mailto:' + txt; });
+      else { var ta = doc.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0'; doc.body.appendChild(ta); ta.select(); try { doc.execCommand('copy'); done(); } catch (e) {} doc.body.removeChild(ta); }
+    });
+  });
 
   /* ---------- 10. FAQ – akordeón + filter ---------- */
   var faqId = 0;
